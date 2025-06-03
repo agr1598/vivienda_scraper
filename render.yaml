@@ -1,0 +1,8 @@
+# render.yaml
+services:
+  - type: cron
+    name: scraper-vivienda
+    schedule: "0 0 */15 * *"    # Cada 15 días a las 00:00 UTC
+    env: python
+    buildCommand: "apt-get update -y && apt-get install -y curl && ./start.sh"
+    startCommand: "./start.sh"
